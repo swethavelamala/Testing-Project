@@ -1,0 +1,165 @@
+<html>
+	<head>
+		<title>Idea Details</title>
+			 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+			 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    
+			
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script> 
+
+			<!-- custom js -->
+    <script src="insertidea.js"></script>
+	<!--<script src="C:\SURESH GAJJELLI\BlueMixApps\sg-app\public\scripts\Project_Details.js"></script> -->
+<style>
+.ui-datepicker {
+   background: pink;
+   border: 1px solid #555;
+  width:14%;
+}
+	p.subheader{
+		font: bold 16px Arial;
+		background-color: #F67846;
+		color: #FFFFFF;
+		width: 100%;
+		padding: 1px 5px 1px 5px;
+		text-align: center;	
+	}
+	table{
+		font: 12px Arial;
+		text-align: left;
+	}
+	textarea.ClsComments {
+            width: 300px;
+            height: 150px;
+      }
+	body {
+		overflow-y: scroll;
+	}
+
+</style>
+	</head>
+	<body>
+		<script src="insertidea.js"></script>
+		<form action="POST" id="ideaDetails" method="get" name="idea_Details" target="_self" onload="retrieveIdeaDetails()">
+		
+			<div class="container" align="center">
+			<h4 style="padding-right:100px;color:blue;">Insert Idea Details</h4>
+			</div>
+			<div>
+			<table class="table table-striped" name="ideaDetails" border="0" cellpadding="2" cellspacing="2" width="100%">
+			<col width="12%" ></col>
+			<col width="38%" ></col>
+			<col width="12%"></col>
+			<col width="38%"></col>
+			<!-- <tr> -->
+				<!-- <td>Year</td> -->
+				<!-- <td><select id="year" style="width:38%"><option value="-- select --">-- Select --</option><option value="2017">2017</option><option value="2018">2018</option><option value="2019">2019</option><option value="2020">2020</option></select></td> -->
+				<!-- <td>Quarter</td> -->
+				<!-- <td><select id="quarter" style="width:38%"><option value="-- select --">-- Select --</option><option value="Q1">Q1</option><option value="Q2">Q2</option><option value="Q3">Q3</option><option value="Q4">Q4</option></select></td> -->
+			<!-- </tr> -->
+			<tr>
+				<td>Name of Contributor</td>
+				<td><input style="width:38%" Id="contributor" type="text" />	</td>
+				<td>Workstream</td>
+				<td><input style="width:38%" Id="workstream" type="text"/></td>
+			</tr>
+			<tr>
+				<td>Portfolio</td>
+				<td><select style="width:38%" id="portfolio" width="100%"><option value="-- select --">-- Select --</option><option value="Corporate">Corporate</option><option value="Enterprise Solutions">Enterprise Solutions</option><option value="Wholesale">Wholesale</option><option value="Wholesale">Enterprise Digital & Payments</option><option value="Wholesale">Consumer</option></select>	</td>
+				<td>Application</td>
+				<td><input style="width:38%" Id="application" type="text"/></td>
+			</tr>
+			<tr>
+				<td>QIS Event</td>
+				<td><select id="quarter" style="width:19%"><option value="-- select --">-- Select --</option><option value="Q1">Q1</option><option value="Q2">Q2</option><option value="Q3">Q3</option><option value="Q4">Q4</option></select>
+				
+				<!-- <input id="year" style="width:19%" type="text"/> -->
+				
+				<select id="year" style="width:19%"><option value="-- select --">-- Select --</option><option value="2017">2017</option><option value="2018">2018</option><option value="2019">2019</option><option value="2020">2020</option></select>
+				
+				</td>
+				
+				<td>Billable</td>
+				<td>
+				<input type="radio" name="Billable" value="Yes"> Yes </input>&ensp;
+				<input type="radio" name="Billable" value="No">  No </input>
+  				</td>
+			</tr>
+			
+			<tr>
+				<td>Estimated Efforts</td>
+				<td><input style="width:38%" Id="effort" type="text" />	</td>
+				<td>Resource(s) working on idea</td>
+				<!-- <td><input style="width:38%;height:35px" Id="resourceworking" type="text" />	</td> -->
+				<td><input style="width:38%" Id="resourceworking" type="text" />	</td>
+			</tr>			
+			
+			<tr>
+				<td>Significant idea</td>
+				<td><input style="width:38%" Id="Significant_idea" type="text" />	</td>
+				<td>Trigger</td>
+				<td><input style="width:38%" Id="Trigger" type="text" />	</td>
+			</tr>
+			
+			<tr>
+				<td>Value/Benefits</td>
+				<td><input style="width:38%" Id="Value_Benefits" type="text" />	</td>
+				<td>Category</td>
+				<td><input style="width:38%" Id="Category" type="text" />	</td>
+			</tr>
+			<tr>
+				<td>Target Implementation </td>
+				<td><input style="width:38%" Id="target" type="text" placeholder="MM/DD/YYYY"/></td>
+				<td>Current Status</td>
+				<td><select style="width:38%" id="status" width="100%"><option value="-- select --">-- Select --</option><option value="New">New</option><option value="In Progress">In Progress</option><option value="Completed">Completed</option></td>
+			</tr>
+			<tr>			
+				<td>Complexity</td>
+				<td><select style="width:38%" id="Complexity" width="100%"><option value="-- select --">-- Select --</option><option value="High">High</option><option value="Medium">Medium</option><option value="Low">Low</option></td>
+				<!-- <td>PSO/Delivery</td> -->
+				<td>Type</td>
+				<td>
+				<input type="radio" name="PSO_Delivery" id="PSO_Delivery" value="PSO"> PSO </input>&ensp;
+				<input type="radio" name="PSO_Delivery" id="PSO_Delivery" value="Delivery">  Delivery</input>
+				</td>
+			</tr>
+			<tr>
+				<td>Hours Spent as part of QIS </td>
+				<td><input style="width:38%" Id="HoursSpentaspartofQIS" type="text" />	</td>
+				<td>Bag Eligibility</td>
+				<td>
+				<input type="checkbox" style="align:left" Id="Bag_Eligibility" value="Yes">
+				</td>
+			</tr>						
+			</table >
+			</div>
+			<div>
+			<!-- -->
+			<table class="table table-striped" name="ideaDetails" border="0" cellpadding="2" cellspacing="2" width="100%">
+			<col width="15%"></col>
+			<col></col>
+			<tr id="trProjDesc">
+				<td>Idea Description</td>
+				<td><textarea id="ideadesc"rows="4" cols="100%">
+					</textarea>	
+				</td>
+			</tr>
+			<tr id="trProjComm">
+				<td>Remarks </td>
+				<td><textarea id="Remarks"rows="4" cols="100%">
+					</textarea>	</td>
+			</tr>
+			</div>
+			</table>
+								
+			<div class="container" align="center">
+				<input id="btninsert" type="button" class="btn btn-info" value="Insert" onclick="insertIdeaDetails()">
+				<input id="btnupdate" type="button" class="btn btn-info" value="Update" onclick="updateIdeaDetails()">
+				<input id="btncancel" type="button" class="btn btn-info" value="Cancel" onclick="Closewindow()">
+			</div>
+		</form>
+	</body>
+</html>
